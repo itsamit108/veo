@@ -4,11 +4,9 @@ from functools import lru_cache
 
 
 class Settings(BaseSettings):
-    astradb_keyspace: str = Field(..., env="ASTRADB_KEYSPACE")
-    astradb_client_id: str = Field(..., env="ASTRADB_CLIENT_ID")  # Update field name
-    astradb_client_secret: str = Field(
-        ..., env="ASTRADB_CLIENT_SECRET"
-    )  # Update field name
+    astradb_keyspace: str = Field(..., env="ASTRADB_KEYSPACE")  # type: ignore
+    astradb_client_id: str = Field(..., env="ASTRADB_CLIENT_ID")  # type: ignore # Update field name
+    astradb_client_secret: str = Field(..., env="ASTRADB_CLIENT_SECRET")  # type: ignore
 
     class Config:
         env_file = ".env"
@@ -16,4 +14,4 @@ class Settings(BaseSettings):
 
 @lru_cache
 def get_settings():
-    return Settings()
+    return Settings()  # type: ignore

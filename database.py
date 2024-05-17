@@ -11,8 +11,8 @@ settings = config.get_settings()
 
 
 CONNECT_BUNDLE = BASE_DIR / "unencrypted" / "astradb_connect.zip"
-ASTRADB_CLIENT_ID = settings.db_client_id
-ASTRADB_CLIENT_SECRET = settings.db_client_secret
+ASTRADB_CLIENT_ID = settings.db_client_id  # type: ignore
+ASTRADB_CLIENT_SECRET = settings.db_client_secret  # type: ignore
 
 
 def get_sesion():
