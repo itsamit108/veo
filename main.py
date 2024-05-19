@@ -21,3 +21,9 @@ async def root():
     return {
         "data": "Hello World",
     }
+
+
+@app.get("/users")
+async def users_list_view():
+    q = User.objects.all().limit(10)
+    return list(q)
