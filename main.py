@@ -12,7 +12,7 @@ DB_SESSION = None
 @app.on_event("startup")
 def on_startup():
     global DB_SESSION
-    DB_SESSION = database.get_sesion()
+    DB_SESSION = database.get_session()
     sync_table(User)
 
 
