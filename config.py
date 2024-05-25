@@ -1,6 +1,9 @@
 from pydantic_settings import BaseSettings
 from pydantic import Field
 from functools import lru_cache
+import os
+
+os.environ["CQLENG_ALLOW_SCHEMA_MANAGEMENT"] = "1"
 
 
 class Settings(BaseSettings):
